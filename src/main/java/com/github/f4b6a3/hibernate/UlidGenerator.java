@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.github.f4b6a3.hibernate;
 
 import java.io.Serializable;
 import org.hibernate.HibernateException;

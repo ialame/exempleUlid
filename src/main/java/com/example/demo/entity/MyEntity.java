@@ -15,10 +15,9 @@ public class MyEntity {
     @GeneratedValue(generator = "ulid")
     @GenericGenerator(name = "ulid", strategy = "com.github.f4b6a3.hibernate.UlidGenerator")
     private String id;
-
-    // Autres attributs de votre entité
-
     private String name;
 
-    // Getters et setters pour les autres attributs
+    // ... autres attributs ...
+
+    // ... getters et setters ...
 }
