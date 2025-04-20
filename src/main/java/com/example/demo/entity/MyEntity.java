@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.github.f4b6a3.hibernate.AbstractUlidEntity;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -7,17 +9,23 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import com.github.f4b6a3.ulid.UlidCreator;
 
+import java.util.UUID;
+
 @Entity
-@Data
-public class MyEntity {
-
-    @Id
-    @GeneratedValue(generator = "ulid")
-    @GenericGenerator(name = "ulid", strategy = "com.github.f4b6a3.hibernate.UlidGenerator")
-    private String id;
+public class MyEntity extends AbstractUlidEntity {
     private String name;
+    public MyEntity(String name) {
+        super();
+        this.name = name;
+    }
+    public MyEntity() {
+    }
 
-    // ... autres attributs ...
-
-    // ... getters et setters ...
+    // Getters & Setters
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 }
